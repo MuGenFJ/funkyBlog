@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;1,400&family=Ruthie&display=swap");
+
+/*
+========================
+VARIABLES
+========================
+*/
+
+:root {
+  /*Colors*/
+  --beige: #fff4ec;
+  --orange: #ffd6b8;
+  --brown: #47423f;
+  --white: #ffffff;
+  /*Fonts*/
+  --regular: "Montserrat", sans-serif;
+  --handwriting: "Ruthie", cursive;
+}
+
+/*
+========================
+GLOBAL STYLES
+========================
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    background-color: var(--orange);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .blogBox {
+    background-color: var(--white);
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/*=========================================================*/
+/*
+========================
+Components Styles
+========================
+*/
+/*=========================================================*/
+
+/*Ligne*/
+
+.bigTitle {
+  border-bottom: 2px solid var(--orange);
+  width: 200px;
+  margin: 0 auto;
+}
+
+.bigTitle-h1 {
+  font-family: var(--handwriting);
+  color: var(--brown);
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 38px;
+}
+.subTitle-h1 {
+  font-family: var(--handwriting);
+  color: var(--brown);
+  letter-spacing: 12px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+/*NavBar-Navigation*/
+
+.navBar {
+  height: 100px;
+  background-color: var(--beige);
+}
+
+.openCloseBtn {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  top: 0;
+  left: 5%;
+  margin: 20px 10px 10px 0;
+  width: 50px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 9999;
+  transition: all 0.5s;
+}
+@media screen and (min-width: 768px) {
+  .openCloseBtn {
+    display: none;
+  }
+}
+
+.openCloseBtn .line {
+  width: 80%;
+  height: 3px;
+  background: var(--brown);
+  transition: all 1s;
+}
+
+.openCloseBtn .line-1 {
+  width: 40%;
+}
+
+.openCloseBtn .line-2 {
+  width: 60%;
+}
+
+.openCloseBtn.change {
+  position: fixed;
+  left: 48%;
+  transition: all 0.9s;
+}
+
+.openCloseBtn.change .line {
+  background: var(--beige);
+}
+
+.openCloseBtn.change .line-1 {
+  width: 80%;
+  transform: rotateZ(-405deg) translate(-20px, 6px);
+}
+.openCloseBtn.change .line-2 {
+  width: 80%;
+  opacity: 0;
+}
+.openCloseBtn.change .line-3 {
+  transform: rotateZ(405deg) translate(-8px, 6px);
+}
+
+/*========== Global links style ====(start)========*/
+
+.linksItemsXs li a,
+.pageLinks li a {
+  text-decoration: none;
+}
+
+.pageLinks li {
+  position: relative;
+  padding: 5px 0;
+}
+
+.pageLinks li::before,
+.pageLinks li::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--orange);
+  position: absolute;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.pageLinks li::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+.pageLinks li::before {
+  top: 0;
+  transform-origin: left;
+}
+
+.pageLinks li:hover::after,
+.pageLinks li:hover::before {
+  transform: scaleX(1);
+  transition: transform 0.5s;
+}
+
+/*========== Global links style ====(end)========*/
+
+/*Xscreen - Navigation*/
+
+.overlayContainer {
+  position: fixed;
+  background-color: var(--brown);
+  border-radius: 0 15% 60% 0;
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  z-index: 9999;
+  transition: all 0.6s ease-in-out;
+}
+@media screen and (min-width: 768px) {
+  .overlayContainer {
+    display: none;
+  }
+}
+
+.overlayContainer.active {
+  left: -35%;
+  transition: all 0.6s ease-in-out;
+}
+
+.overlayContainer .linksItemsXs {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlayContainer .linksItemsXs li {
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 25px;
+  font-family: var(--regular);
+  letter-spacing: 10px;
+  list-style-type: none;
+  margin: 20px;
+  margin-left: 30%;
+}
+
+.linksItemsXs li a {
+  color: var(--white);
+}
+
+/*Mscreen - Navigation*/
+
+.linksItemsMs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.linksItemsMs li {
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 14px;
+  font-family: var(--regular);
+  letter-spacing: 10px;
+  list-style-type: none;
+  margin: 20px;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .linksItemsMs li {
+    display: block;
+  }
+}
+
+.linksItemsMs li a {
+  color: var(--brown);
+}
+
+/*BlogTitle*/
+
+.blogTitleContainer {
+  padding: 40px 0 20px 0;
+  position: relative;
+}
+
+.logoTitle {
+  position: absolute;
+  top: -22px;
+  left: 88%;
+}
+
+/*About*/
+
+.About {
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .About {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .About {
+    width: 80%;
+  }
+}
+
+.imgContainter {
+  width: 360px;
+  height: 360px;
+}
+@media screen and (min-width: 1024px) {
+  .imgContainter {
+    width: 360px;
+    height: 360px;
+  }
+}
+
+.imgContainter img {
+  width: 100%;
+  height: 100%;
+}
+
+.description {
+  position: absolute;
+  top: 400px;
+  left: 100px;
+  padding: 20px;
+  border: 3px solid var(--beige);
+  background-color: rgba(255, 255, 255, 0.911);
+  width: 74vw;
+  height: auto;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .description {
+    width: 56vw;
+    top: 330px;
+    left: 316px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .description {
+    left: 488px;
+    width: 49vw;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .description {
+    width: 698px;
+    height: auto;
+    left: 548px;
+  }
+}
+
+.description h3 {
+  font-size: 19px;
+  font-family: var(--regular);
+  color: var(--brown);
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.description p {
+  width: 95%;
+  padding: 10px;
+  font-family: var(--regular);
+  color: var(--brown);
+  font-size: 12px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/*Article Category*/
