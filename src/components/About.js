@@ -2,42 +2,51 @@ import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 
+
 const query = graphql`
-    {
-      file(relativePath: {eq: "about-img.png"}) {
-        id
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
+  {
+    allStrapiAbouts {
+      nodes {
+        bioTitle
+        biography
+        avatar {
+          childImageSharp {
+            fluid (maxWidth: 360, maxHeight: 360) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
       }
     }
-  `
+  }
+`
 
 
-function About() {
+function About() { 
 
-    const {
-        file: {
-            childImageSharp: { fluid },
-        },
-    } = useStaticQuery(query)
+  const data = useStaticQuery(query)
+  const {
+    allStrapiAbouts: { nodes: about },
+  } = data
 
     return (
-        <>
-            <div className="About">
+      <>
+        {about.map((item, index) => {
+          return (
+             <div key={index} className="About">
                 <div className="imgContainter">
-                    <Image fluid={fluid} className="aboutImg" alt="about-img"/>
+                    <Image fluid={item.avatar.childImageSharp.fluid} className="aboutImg" alt="about-img"/>
                 </div>
                 <div className="description">
-                    <h3>Welcome to my Blog !</h3>
-                    <p>Retro pitchfork DIY ethical, man braid fanny pack iceland banh mi cold-pressed sriracha cronut art party. Palo santo polaroid trust fund mumblecore sartorial. Listicle trust fund deep v, austin pork belly cred celiac messenger bag subway tile sriracha mumblecore everyday carry. Banjo vinyl unicorn hell of, chicharrones scenester roof party pour-over direct trade helvetica wolf ramps iceland normcore kitsch.</p>
-                    {/* <p>Retro pitchfork DIY ethical, man braid fanny pack iceland banh mi cold-pressed sriracha cronut art party. Palo santo polaroid trust fund mumblecore sartorial. Listicle trust fund deep v, austin pork belly cred celiac messenger bag subway tile sriracha mumblecore everyday carry. Banjo vinyl unicorn hell of, chicharrones scenester roof party pour-over direct trade helvetica wolf ramps iceland normcore kitsch.</p> */}
+                    <h3> {item.bioTitle} </h3>
+                    <p>{item.biography}.</p>
                 </div>
-            </div>
+              </div>
+                  )
+            })}
         </>
     )
 }
+
 
 export default About

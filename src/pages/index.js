@@ -5,15 +5,19 @@ import LogoTitle from "../images/assets/logoTitle.svg"
 import Card from '../components/Card'
 import Layout from '../components/Layout'
 
+
+
 function index() {
+
   return (
     <>
       <Layout>
         <div className="blogBox"> 
-          <BlogTitle title="Funky-A's Personal Blog" logo={LogoTitle} bigTitle/>
+          <BlogTitle  logo={LogoTitle} bigTitle/>
           <About />
           <BlogTitle title="Article Category" />
           <Card />
+          <BlogTitle title="Latest Articles" />
         </div>
       </Layout>
     </>

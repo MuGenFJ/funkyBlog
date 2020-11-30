@@ -10,7 +10,7 @@ function Navbar() {
         setOpen(!open);
     } 
 
-    //===== Clik Outside Feature to close the OverlayMenu (start) =====
+    // ===== Clik Outside Feature to close the OverlayMenu (start) =====
     let menuRef = useRef();
     
     const handler = (event) => {
@@ -24,7 +24,7 @@ function Navbar() {
         document.addEventListener("mousedown", handler);
         return () => document.removeEventListener('mousedown', handler)
     })
-    //===== Clik Outside Feature to close the OverlayMenu (end) =====
+    // ===== Clik Outside Feature to close the OverlayMenu (end) =====
 
     return (
         <nav className="navBar">

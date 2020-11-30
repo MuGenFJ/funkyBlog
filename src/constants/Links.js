@@ -18,18 +18,24 @@ const data = [
     },
 ] 
 
+
 const tempLinks = data.map(link => {
+
     return (
         <li key={link.id}>
-            <Link to={link.url}>{ link.text }</Link>
+            <Link  activeClassName="active" to={link.url}>{link.text}</Link>
         </li>
+
     )
 })
+
+
 
 export default ({ styleClass }) => {
     return (
         <ul className={`pageLinks ${styleClass ? styleClass : ""}`}>
             {tempLinks}
+
         </ul>
     )
 }

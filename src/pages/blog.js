@@ -1,10 +1,11 @@
 import React from 'react'
+import Layout from '../components/Layout'
 
 function blog() {
     return (
-        <div>
+        <Layout>
             Blog Page
-        </div>
+        </Layout>
     )
 }
 
