@@ -37,7 +37,7 @@ GLOBAL STYLES
 @media screen and (min-width: 1024px) {
   .blogBox {
     background-color: var(--white);
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
   }
 }
@@ -52,10 +52,12 @@ Components Styles
 
 /*Ligne*/
 
-.bigTitle {
-  border-bottom: 2px solid var(--orange);
+.ligne {
+  height: 2px;
+  background-color: var(--orange);
   width: 200px;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .bigTitle-h1 {
@@ -64,7 +66,9 @@ Components Styles
   letter-spacing: 3px;
   text-align: center;
   font-size: 38px;
+  margin-bottom: 10px;
 }
+
 .subTitle-h1 {
   font-family: var(--handwriting);
   color: var(--brown);
@@ -73,7 +77,7 @@ Components Styles
   font-size: 25px;
   font-weight: 500;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-bottom: 10px;
 }
 
 /*NavBar-Navigation*/
@@ -81,6 +85,12 @@ Components Styles
 .navBar {
   height: 100px;
   background-color: var(--beige);
+}
+@media screen and (min-width: 1024px) {
+  .navBar {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
 .openCloseBtn {
@@ -269,8 +279,8 @@ Components Styles
 /*BlogTitle*/
 
 .blogTitleContainer {
-  padding: 40px 0 20px 0;
   position: relative;
+  padding: 40px 20px 0 0;
 }
 
 .logoTitle {
@@ -283,6 +293,7 @@ Components Styles
 
 .About {
   margin-top: 30px;
+  margin-bottom: 80px;
 }
 
 @media screen and (min-width: 768px) {
@@ -467,4 +478,680 @@ Components Styles
   font-size: 18px;
   color: var(--brown);
   cursor: pointer;
+}
+
+/*Lastest Articles */
+.avatar {
+  position: absolute;
+  top: 38%;
+  left: 15%;
+}
+
+.articleContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .articleContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.articleBox {
+  height: 100%;
+}
+
+.articleContainer .articleImage {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .articleContainer .articleImage {
+    width: 300px;
+    margin-left: 5px;
+  }
+}
+
+.articleContainer .articleImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.articleCard {
+  width: 55vw;
+  box-shadow: 2px 5px 8px 2px var(--brown);
+  margin-left: 5px;
+}
+@media screen and (min-width: 768px) {
+  .articleCard {
+    margin-right: 5px;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .articleCard {
+    width: 600px;
+  }
+}
+
+.articleCard .cardTop {
+  background-color: var(--beige);
+  padding: 20px 0;
+}
+
+.articleCard .cardTop a {
+  text-decoration: none;
+  color: var(--brown);
+  font-family: var(--regular);
+  text-transform: uppercase;
+  font-size: 10px;
+  font-style: italic;
+  margin-left: 10px;
+}
+.articleCard .cardTop a:hover {
+  text-decoration: underline;
+}
+
+.articleCard .articleText {
+  padding: 15px 10px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.articleCard .articleText h3 {
+  color: var(--orange);
+  font-weight: bold;
+  font-family: var(--regular);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.articleCard .articleText p {
+  padding: 20px 5px;
+  font-family: var(--regular);
+  color: var(--brown);
+  font-size: 12px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.articleCard .cardBottom {
+  background-color: var(--beige);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.articleCard .cardBottom .btn button {
+  font-family: var(--regular);
+  color: var(--brown);
+  background-color: white;
+  border: 2px solid var(--brown);
+  padding: 10px 20px;
+  font-size: 10px;
+  font-style: italic;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.articleCard .cardBottom span {
+  align-self: flex-end;
+  font-family: var(--regular);
+  color: var(--brown);
+  font-size: 8px;
+  margin-right: 5px;
+}
+
+.articleNumber {
+  height: 80px;
+  width: 80px;
+  background-color: var(--orange);
+  position: absolute;
+  top: 80%;
+  left: 71%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--handwriting);
+  color: var(--brown);
+}
+.articleNumber span:nth-child(1) {
+  margin-top: -6px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.articleNumber span:nth-child(2) {
+  font-size: 33px;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .articleNumber {
+    top: -4%;
+    left: 90%;
+    opacity: 0.8;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .articleNumber {
+    left: 92%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .articleNumber {
+    left: 85%;
+  }
+}
+
+/* Articles Special features*/
+.articlesContainer > .articleContainer:nth-child(even) > .articleBox {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.articlesContainer
+  > .articleContainer:nth-child(even)
+  > .articleBox
+  .articleNumber {
+  left: 10%;
+}
+@media screen and (min-width: 768px) {
+  .articlesContainer
+    > .articleContainer:nth-child(even)
+    > .articleBox
+    .articleNumber {
+    top: -4%;
+    left: 90%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .articlesContainer
+    > .articleContainer:nth-child(even)
+    > .articleBox
+    .articleNumber {
+    left: 92%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .articlesContainer
+    > .articleContainer:nth-child(even)
+    > .articleBox
+    .articleNumber {
+    left: 85%;
+  }
+}
+
+.articlesContainer
+  > .articleContainer:nth-child(even)
+  > .articleBox
+  .articleCard {
+  width: 55vw;
+  box-shadow: 2px 5px 8px 2px var(--brown);
+  margin-left: 0px;
+  margin-right: 5px;
+}
+@media screen and (min-width: 768px) {
+  .articlesContainer
+    > .articleContainer:nth-child(even)
+    > .articleBox
+    .articleCard {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .articlesContainer
+    > .articleContainer:nth-child(even)
+    > .articleBox
+    .articleCard {
+    height: 100%;
+    width: 600px;
+  }
+}
+
+/*Pagination*/
+.pagination {
+  background-color: var(--beige);
+  margin: 20px 0 0 0;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination span {
+  margin-right: 15px;
+  font-family: var(--regular);
+  color: var(--brown);
+  font-size: 12px;
+}
+
+.endLogo {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+/*Form Section*/
+.formContainer {
+  background-color: var(--beige);
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+.formInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--regular);
+  font-size: 12px;
+  color: var(--brown);
+  padding: 15px 10px;
+}
+
+.formInfo span:nth-child(1) {
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .registerForm {
+    flex-direction: row;
+    margin: 0 20px;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.registerForm .formField {
+  width: 50%;
+  border: none;
+  margin: 5px;
+  padding: 3px;
+  font-family: var(--regular);
+  color: var(--brown);
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .registerForm .formField {
+    margin: 0 10px;
+  }
+}
+
+.registerForm .formField:nth-child(1),
+.formField:nth-child(2) {
+  width: 40%;
+  font-style: italic;
+}
+.formField:nth-child(3) {
+  font-style: italic;
+}
+
+.registerForm .formField:nth-child(4) {
+  width: 60%;
+  background-color: var(--brown);
+  color: var(--beige);
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+/*Greeting Box*/
+.greetingContainer {
+  background-color: var(--beige);
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+.greetingContainer .box1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.greetingContainer .box1 span {
+  rotate: -30deg;
+  font-family: var(--handwriting);
+  letter-spacing: 3px;
+  color: var(--brown);
+  font-size: 22px;
+}
+
+.greetingContainer .box1 img {
+  width: 60px;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+}
+
+.greetingContainer .seperationLigne {
+  background-color: var(--brown);
+  width: 1px;
+  height: 100px;
+}
+
+.greetingContainer .box2 img {
+  cursor: pointer;
+  width: 80px;
+}
+
+/*Footer*/
+.Footer {
+  background-color: white;
+  padding: 10px 20px;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.Footer span {
+  font-size: 9px;
+  font-family: var(--regular);
+  color: var(--brown);
+  letter-spacing: 3px;
+}
+
+/*THOUGHTS PAGE*/
+.thoughtsContainer {
+  margin-bottom: 40px;
+}
+.thoughtsContainer .imageBox {
+  width: 100%;
+  height: 360px;
+  margin-top: 30px;
+}
+@media screen and (min-width: 1024px) {
+  .thoughtsContainer .imageBox {
+    margin-top: 0;
+  }
+}
+.thoughtsContainer .imageBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thoughtsContainer .separation {
+  height: 1px;
+  width: 60%;
+  background-color: var(--orange);
+  margin: 30px auto;
+}
+@media screen and (min-width: 1024px) {
+  .thoughtsContainer .separation {
+    display: none;
+  }
+}
+
+.thoughtsContainer .pageTag {
+  position: absolute;
+  top: 100px;
+  left: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--beige);
+  padding: 20px;
+  height: 400px;
+  font-family: var(--handwriting);
+  font-size: 18px;
+  border: 1px solid var(--brown);
+}
+
+@media screen and (min-width: 1024px) {
+  .thoughtsContainer .pageTag {
+    top: 50%;
+    left: 3%;
+  }
+}
+
+.noNeed {
+  visibility: hidden;
+}
+
+@media screen and (min-width: 1024px) {
+  .thoughtsContainer {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "imagebox articlebox articlebox articlebox"
+      "imagebox articlebox articlebox articlebox"
+      "form form form form"
+      ". . greeting greeting";
+  }
+  .thoughtsContainer .imageBox {
+    grid-area: imagebox;
+    height: 100%;
+  }
+  .thoughtsContainer .articleBox {
+    grid-area: articlebox;
+  }
+  .thoughtsContainer .articleCard,
+  .thoughtsContainer .articleContainer:nth-child(2) > .articleBox .articleCard {
+    width: 30vw;
+  }
+  .thoughtsContainer .articleImage {
+    width: 260px;
+  }
+  .thoughtsContainer .articleNumber,
+  .thoughtsContainer
+    .articlesContainer
+    > .articleContainer:nth-child(2)
+    > .articleBox
+    .articleNumber {
+    background-color: var(--beige);
+    left: 85%;
+  }
+  .thoughtsContainer > .formContainer {
+    background-color: var(--orange);
+    width: 80%;
+    margin: 0 auto;
+    grid-area: form;
+  }
+
+  .thoughtsContainer > .greetingContainer {
+    background-color: var(--orange);
+    grid-area: greeting;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .thoughtsContainer .articleContainer {
+    justify-content: flex-start;
+  }
+
+  .thoughtsContainer .articleImage {
+    width: 300px;
+  }
+  .thoughtsContainer .articleCard,
+  .thoughtsContainer .articleContainer:nth-child(2) > .articleBox .articleCard {
+    width: 35vw;
+  }
+  .thoughtsContainer .articleNumber,
+  .thoughtsContainer
+    .articlesContainer
+    > .articleContainer:nth-child(2)
+    > .articleBox
+    .articleNumber {
+    left: 90%;
+  }
+  .thoughtsContainer .articleCard,
+  .thoughtsContainer .articleContainer:nth-child(2) > .articleBox .articleCard {
+    margin-right: 25px;
+  }
+}
+
+/*TemplateArticle*/
+
+.readContainer .headerImage {
+  height: 350px;
+  width: 100%;
+}
+
+.readContainer .headerImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.readContainer .readMenu {
+  background-color: #47423fd2;
+  position: absolute;
+  top: 138px;
+  left: 12px;
+  border: 1px solid white;
+  color: white;
+  font-family: var(--regular);
+  text-transform: uppercase;
+  text-align: center;
+  width: 150px;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  z-index: 1;
+}
+@media screen and (min-width: 1024px) {
+  .readContainer .readMenu {
+    top: 269px;
+    left: 180px;
+  }
+}
+
+.readContainer .readMenu ul {
+  list-style-type: none;
+}
+
+.readContainer .readMenu li {
+  line-height: 35px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.readContainer .textContent {
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  font-family: var(--regular);
+  color: var(--brown);
+  margin-top: -80px;
+}
+@media screen and (min-width: 1024px) {
+  .readContainer .textContent {
+    width: 65%;
+  }
+}
+
+.readContainer .textContent .title h3 {
+  padding: 8px 0;
+  background-color: white;
+  font-size: 23px;
+  font-weight: bold;
+  box-shadow: 2px 2px 2px 2px var(--brown);
+}
+
+.readContainer .textContent .title h5 {
+  font-style: italic;
+  color: var(--brown);
+  margin: 5px 0;
+}
+
+.readContainer .textContent .textBox {
+  background-color: white;
+  box-shadow: 2px 2px 2px 2px var(--brown);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.readContainer .textContent .textBox .articleAvatar {
+  padding: 10px 0;
+}
+
+.readContainer .textContent .textBox .ligneTop {
+  height: 2px;
+  background-color: var(--brown);
+  width: 40%;
+  margin: 5px 0 30px 10px;
+}
+
+.readContainer .textContent .textBox p {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 12px;
+}
+
+.readContainer .textContent .textBox .ligneBottom {
+  height: 2px;
+  background-color: var(--brown);
+  width: 40%;
+  margin: 30px 10px 20px 0;
+  align-self: flex-end;
+}
+
+.readContainer .textContent .textBox .date {
+  font-style: italic;
+}
+
+.readContainer .textContent .textBox .socialLinks {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
+.readContainer .textContent .textBox .socialLinks span:nth-child(1) {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.readContainer .textContent .textBox .socialLinks .socialButton .socialLine {
+  height: 1px;
+  width: 50px;
+  margin: 5px auto;
+  background-color: var(--brown);
+}
+
+.readContainer .textContent .textBox .socialLinks .socialButton span {
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .readContainer .textContent .formContainer {
+    background-color: var(--orange);
+  }
+  .readContainer .textContent .greetingContainer {
+    background-color: var(--orange);
+  }
 }

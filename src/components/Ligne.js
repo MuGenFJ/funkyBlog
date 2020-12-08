@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Ligne({bigTitle}) {
+function Ligne({ligneClass}) {
     return (
-        <div className={bigTitle ? "bigTitle" : "subTitle"} ></div>
+        <div className={ligneClass}></div>
     )
 }
 
