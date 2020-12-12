@@ -2,11 +2,11 @@ import React from 'react'
 import Image from 'gatsby-image'
 import {Link} from 'gatsby'
 
-function ArticleCard({image, tags, title, description, date, index}) {
+function ArticleCard({image, tags, title, description, slug, date, index}) {
     return (
         <div className="articleContainer">
-                <div className="articleImage">
-                    <Image fluid={image.childImageSharp.fluid} alt=""/>
+                <div className="articleImageContainer">
+                    <Image className="articleCardImage" fluid={image.childImageSharp.fluid} alt=""/>
                 </div>
                 <div className="articleBox">
                     <div className="articleCard">
@@ -19,7 +19,7 @@ function ArticleCard({image, tags, title, description, date, index}) {
                         </div>
                         <div className="cardBottom">
                             <div className="btn">
-                                <button>Read More</button>
+                                <button><Link to={`http://localhost:8000/blogs/${slug}`}>Read More</Link></button>
                             </div>
                             <span>{date}</span>
                         </div>

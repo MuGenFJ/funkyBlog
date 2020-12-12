@@ -9,9 +9,8 @@ import GreetingBox from '../components/GreetingBox'
 function thoughts({data}) {
   const {
     allStrapiBlogs: { nodes: blogs },
-    allStrapiCards: { nodes: cards}
+    allStrapiCards : {nodes: cards}
   } = data
-  
     return (
         <Layout>
             <div className="thoughtsContainer">
@@ -24,18 +23,15 @@ function thoughts({data}) {
                 </div>
                 <div className="separation"></div>
                 <div className="articleBox">
-                    <Articles blogs={blogs} />  
+                    <Articles blogs={blogs} />   
                 </div>
                 <div className="pageTag">
                     <span>#</span>
-                    <span>T</span>
+                    <span>C</span>
                     <span>H</span>
-                    <span>O</span>
-                    <span>U</span>
-                    <span>G</span>
-                    <span>H</span>
-                    <span>T</span>
-                    <span>S</span>
+                    <span>I</span>
+                    <span>L</span>
+                    <span>L</span>
                     <span>#</span>
                 </div>
                 <SignUp />
@@ -47,7 +43,7 @@ function thoughts({data}) {
 
  export const query = graphql`
   {
-    allStrapiBlogs(filter: {tags: {eq: "thoughts"}}, sort: {order: DESC, fields: date})  {
+    allStrapiBlogs(filter: {tags: {eq: "chill"}}, sort: {order: DESC, fields: date})  {
       nodes {
         title
         description
@@ -65,7 +61,7 @@ function thoughts({data}) {
         tags
       }
     }
-    allStrapiCards(filter: {tags: {eq: "thoughts"}}) {
+    allStrapiCards(filter: {tags: {eq: "chill"}}) {
       nodes {
         pageSideImage {
           childImageSharp {

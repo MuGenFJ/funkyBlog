@@ -35,7 +35,6 @@ export default ({ styleClass }) => {
     return (
         <ul className={`pageLinks ${styleClass ? styleClass : ""}`}>
             {tempLinks}
-
         </ul>
     )
 }

@@ -29,22 +29,20 @@ function About() {
     allStrapiAbouts: { nodes: about },
   } = data
 
+  const {bioTitle, biography, avatar} = about[0]
+
     return (
       <>
-        {about.map((item, index) => {
-          return (
-             <div key={index} className="About">
-                <div className="imgContainter">
-                    <Image fluid={item.avatar.childImageSharp.fluid} className="aboutImg" alt="about-img"/>
-                </div>
-                <div className="description">
-                    <h3> {item.bioTitle} </h3>
-                    <p>{item.biography}.</p>
-                </div>
+         <div className="About">
+            <div className="imgContainter">
+              <Image fluid={avatar.childImageSharp.fluid} className="aboutImg" alt="about-img"/>
+            </div>
+              <div className="description">
+                <h3> {bioTitle} </h3>
+                <p>{biography}</p>
               </div>
-                  )
-            })}
-        </>
+          </div>
+      </>
     )
 }
 

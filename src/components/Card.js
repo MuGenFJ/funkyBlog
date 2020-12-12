@@ -1,11 +1,11 @@
 import React from 'react'
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import Image from "gatsby-image"
 
 
 const query = graphql`
   {
-    allStrapiCards {
+    allStrapiCards(limit: 3) {
       nodes {
         card_image {
           childImageSharp {
@@ -15,6 +15,7 @@ const query = graphql`
           }
         }
         quote
+        tags
       }
     }
   }
@@ -25,8 +26,8 @@ function Card() {
      const data = useStaticQuery(query)
      const {
     allStrapiCards: { nodes: cards },
-    } = data
-    
+  } = data
+      
     return (
         <div className="cardsContainer">
             {
@@ -39,10 +40,11 @@ function Card() {
                             <div className="quoteBox">
                                 <p>{card.quote}</p>
                                 <div className="ligne"></div>
-                                {/* <div className="categoryBtn"> */}
-                                {/* <Link className="btn" to="/thoughts">
-                                    <button role="button">Thoughts</button>
-                                </Link> */}
+                                <div className="categoryBtn">
+                                  <Link className="btn btn-border-1" to={`/${card.tags}`}>
+                                    {card.tags}
+                                  </Link>
+                                </div>
                             </div>
                         </div>
                     )

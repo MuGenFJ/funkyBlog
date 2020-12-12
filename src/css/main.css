@@ -152,13 +152,16 @@ Components Styles
 
 /*========== Global links style ====(start)========*/
 
-.pageLinks li {
+.linksItemsMs li,
+.linksItemsXs li {
   position: relative;
   padding: 5px 0;
 }
 
-.pageLinks li::before,
-.pageLinks li::after {
+.linksItemsMs li::before,
+.linksItemsMs li::after,
+.linksItemsXs li::before,
+.linksItemsXs li::after {
   content: "";
   width: 100%;
   height: 2px;
@@ -169,28 +172,32 @@ Components Styles
   transition: transform 0.5s;
 }
 
-.pageLinks li::after {
+.linksItemsMs li::after,
+.linksItemsXs li::after {
   bottom: 0;
   transform-origin: right;
 }
 
-.pageLinks li::before {
+.linksItemsMs li::before,
+.linksItemsXs li::before {
   top: 0;
   transform-origin: left;
 }
 
-.pageLinks li:hover::after,
-.pageLinks li:hover::before {
+.linksItemsMs li:hover::after,
+.linksItemsMs li:hover::before,
+.linksItemsXs li:hover::after,
+.linksItemsXs li:hover::before {
   transform: scaleX(1);
   transition: transform 0.5s;
 }
 
 .linksItemsXs li a,
-.pageLinks li a {
+.linksItemsMs li a {
   text-decoration: none;
 }
 
-.pageLinks li a.active {
+.linksItemsMs li a.active {
   background-color: #47423f2a;
   border-radius: 5px;
   padding: 5px;
@@ -382,6 +389,10 @@ Components Styles
   grid-template-columns: 1fr;
 }
 
+.cardsContainer:hover .cardItems {
+  backdrop-filter: blur(5px);
+}
+
 .cardsContainer:hover .cardItems:not(:hover) {
   filter: grayscale(100%);
 }
@@ -434,7 +445,6 @@ Components Styles
 .imgBox .cardImg {
   width: 100%;
   height: 100%;
-  /* object-fit: cover !important; */
 }
 
 .quoteBox {
@@ -450,7 +460,7 @@ Components Styles
 .quoteBox p {
   font-family: var(--handwriting);
   color: var(--brown);
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .quoteBox .ligne {
@@ -460,24 +470,71 @@ Components Styles
   margin-top: 10px;
 }
 
-.categoryBtn {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/*buttonEffect*/
+.quoteBox .btn {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 8px 15px;
+  text-align: center;
+  font-size: 12px;
+  font-family: var(--regular);
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #999999;
+  background: #ffffff;
+  border: 3px solid #999999;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  -webkit-transition: ease-out 0.5s;
+  -moz-transition: ease-out 0.5s;
 }
 
-.categoryBtn .btn button {
-  background-color: white;
-  border: none;
-  padding: 5px 40px;
-  text-decoration: none;
-  font-family: var(--regular);
-  text-transform: uppercase;
-  font-style: italic;
-  font-size: 18px;
+.quoteBox .btn.btn-border-1::after,
+.quoteBox .btn.btn-border-1::before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 0%;
+  visibility: hidden;
+}
+
+.quoteBox .btn.btn-border-1::after {
+  bottom: -3px;
+  right: -3px;
+  border-left: 3px solid var(--brown);
+  border-bottom: 3px solid var(--brown);
+  transition: width 0.1s ease 0.1s, height 0.1s ease, visibility 0s 0.2s;
+}
+
+.quoteBox .btn.btn-border-1::before {
+  top: -3px;
+  left: -3px;
+  border-top: 3px solid var(--brown);
+  border-right: 3px solid var(--brown);
+  transition: width 0.1s ease 0.3s, height 0.1s ease 0.2s, visibility 0s 0.4s;
+}
+
+.quoteBox .btn.btn-border-1:hover {
+  animation: pulse 1s ease-out 0.4s;
   color: var(--brown);
-  cursor: pointer;
+}
+
+.quoteBox .btn.btn-border-1:hover::after,
+.quoteBox .btn.btn-border-1:hover::before {
+  width: calc(100% + 3px);
+  height: calc(100% + 3px);
+  visibility: visible;
+  transition: width 0.1s ease 0.2s, height 0.1s ease 0.3s, visibility 0s 0.2s;
+}
+
+.quoteBox .btn.btn-border-1:hover::after {
+  transition: width 0.1s ease 0.2s, height 0.1s ease 0.3s, visibility 0s 0.2s;
+}
+
+.quoteBox .btn.btn-border-1:hover::before {
+  transition: width 0.1s ease, height 0.1s ease 0.1s;
 }
 
 /*Lastest Articles */
@@ -507,32 +564,36 @@ Components Styles
   height: 100%;
 }
 
-.articleContainer .articleImage {
+.articleContainer .articleImageContainer {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  height: 320px;
 }
 
 @media screen and (min-width: 768px) {
-  .articleContainer .articleImage {
+  .articleContainer .articleImageContainer {
     width: 300px;
+    height: 260px;
     margin-left: 5px;
   }
 }
 
-.articleContainer .articleImage img {
+.articleContainer .articleImageContainer .articleCardImage {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .articleCard {
+  position: relative;
   width: 55vw;
+  margin-top: -100px;
   box-shadow: 2px 5px 8px 2px var(--brown);
   margin-left: 5px;
 }
 @media screen and (min-width: 768px) {
   .articleCard {
     margin-right: 5px;
+    margin-top: 0;
     height: 100%;
   }
 }
@@ -888,7 +949,7 @@ Components Styles
     margin-top: 0;
   }
 }
-.thoughtsContainer .imageBox img {
+.thoughtsContainer .imageBox .sideImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -957,9 +1018,10 @@ Components Styles
   .thoughtsContainer .articleContainer:nth-child(2) > .articleBox .articleCard {
     width: 30vw;
   }
-  .thoughtsContainer .articleImage {
+  .thoughtsContainer .articleImageContainer {
     width: 260px;
   }
+
   .thoughtsContainer .articleNumber,
   .thoughtsContainer
     .articlesContainer
@@ -987,7 +1049,7 @@ Components Styles
     justify-content: flex-start;
   }
 
-  .thoughtsContainer .articleImage {
+  .thoughtsContainer .articleImageContainer {
     width: 300px;
   }
   .thoughtsContainer .articleCard,
@@ -1009,13 +1071,12 @@ Components Styles
 }
 
 /*TemplateArticle*/
-
 .readContainer .headerImage {
   height: 350px;
   width: 100%;
 }
 
-.readContainer .headerImage img {
+.readContainer .imageHeader {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1046,17 +1107,22 @@ Components Styles
   }
 }
 
-.readContainer .readMenu ul {
+.readContainer .readMenu .pageLinks {
   list-style-type: none;
 }
 
-.readContainer .readMenu li {
+.readContainer .readMenu .pageLinks li a {
+  text-decoration: none;
   line-height: 35px;
   font-size: 14px;
+  color: white;
   font-weight: bold;
   letter-spacing: 8px;
   width: 100%;
   height: 100%;
+}
+.readContainer .readMenu .pageLinks li a:hover {
+  text-decoration: underline;
 }
 
 .readContainer .textContent {
@@ -1153,5 +1219,24 @@ Components Styles
   }
   .readContainer .textContent .greetingContainer {
     background-color: var(--orange);
+  }
+}
+
+/*aboutPage*/
+.aboutPage {
+  height: 100vh;
+}
+@media screen and (min-width: 1024px) {
+  .aboutPage {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/*blogPage*/
+@media screen and (min-width: 1024px) {
+  .blogPage {
+    width: 80%;
+    margin: 0 auto;
   }
 }

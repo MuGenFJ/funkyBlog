@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
+import Image from "gatsby-image"
 import Ligne from './Ligne'
 
 const query = graphql`
@@ -19,15 +20,11 @@ function BlogTitle({ title, logo, bigTitle, logoClass }) {
 
     return (
         <>
-            {mainTitle.map((item, index) => {
-                return (
-                     <div key={index} className={bigTitle || title ? "blogTitleContainer" : ""}>
-                        <h1 className={bigTitle ? "bigTitle-h1" : "subTitle-h1"}>{bigTitle ? item.Blog_main_title : title}</h1>
-                        <span className={logoClass}><img src={logo ? logo : ""} alt={logo && "logo-title"}/></span>
-                    </div>
-                )
-            })}
-        <Ligne ligneClass={bigTitle || title ? "ligne" : ""}/>
+          <div className={bigTitle || title ? "blogTitleContainer" : ""}>
+            <h1 className={bigTitle ? "bigTitle-h1" : "subTitle-h1"}>{bigTitle ? mainTitle[0].Blog_main_title : title}</h1>
+              <span className={logoClass}><Image fixed={logo} alt={logo && "logo-title"}/></span>
+          </div>
+          <Ligne ligneClass={bigTitle || title ? "ligne" : ""}/>
         </>
     )
 }
