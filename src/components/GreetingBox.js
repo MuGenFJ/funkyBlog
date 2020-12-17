@@ -15,9 +15,9 @@ function GreetingBox({noNeed}) {
                 <img src={thankImg} alt="thanks-Img"/>
             </div>
             <div className={noNeed ? "noNeed" : "seperationLigne"}></div>
-            <div className="box2" onClick={scrollTop} >
+            <button className="box2Btn" onClick={scrollTop} >
                 <img src={toTheTop} alt="totheTop-btn"/>
-            </div>
+            </button>
         </div>
     )
 }

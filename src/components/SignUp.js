@@ -1,10 +1,19 @@
-import React from 'react'
+import React from 'react'  
+
+// class SignUp extends React.Component {
+//     render() {
+//         return (
+//             JSX
+//         ) 
+//     }
+// }
 
 function SignUp() {
     return (
         <div className="formContainer">
             <div className="formInfo">
                 <span>Sign Up</span><span>&</span><span>Be instantly notify as soon as new posts are available to read</span>
+                <h1>Thank you for your subscription !</h1>
             </div>
             <form className="registerForm">
                 <input

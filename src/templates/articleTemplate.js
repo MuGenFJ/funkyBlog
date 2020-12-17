@@ -27,8 +27,7 @@ function articleTemplate({ data }) {
             <div className="textContent">
                 <div className="title">
                     <h3>{title}</h3>
-                    <Link to={`http://localhost:8000/${tags}`}>#{tags}</Link>
-                    {/* <h5>#{tags}</h5> */}
+                    <Link to={`/tag/${tags}`}>#{tags}</Link>
                 </div>
                 <div className="textBox">
                     <div className="articleAvatar">

@@ -24,9 +24,7 @@ const query = graphql`
 function Card() {
 
      const data = useStaticQuery(query)
-     const {
-    allStrapiCards: { nodes: cards },
-  } = data
+     const {allStrapiCards: { nodes: cards }} = data
       
     return (
         <div className="cardsContainer">
@@ -41,8 +39,8 @@ function Card() {
                                 <p>{card.quote}</p>
                                 <div className="ligne"></div>
                                 <div className="categoryBtn">
-                                  <Link className="btn btn-border-1" to={`/${card.tags}`}>
-                                    {card.tags}
+                                  <Link className="btn btn-border-1" to={`/tag/${card.tags}`}>
+                                    # {card.tags}
                                   </Link>
                                 </div>
                             </div>
