@@ -9,12 +9,25 @@ import Footer from '../components/Footer'
 import Links from '../constants/Links'
 import { graphql, Link } from 'gatsby'
 import Image from "gatsby-image"
+import { DiscussionEmbed } from "disqus-react"
+import SEO from '../components/SEO'
 
 
-function articleTemplate({ data }) {
-    const { content, title, date, tags, image } = data.blog
+function articleTemplate({ data, pageContext }) {
+    const { content, title, date, tags, image, id, description } = data.blog
+
+    const baseUrl = "https://ajhope.blog.com/"
+
+    const disqusShortname = "hope-blog-1"
+    const disqusConfig = {
+        identifier: id,
+        title: title,
+        url: baseUrl + pageContext.slug
+    }
 
     return (
+       <>
+        <SEO title={title} description={`${description}`} />
         <div className="readContainer">
             <div className="headerImage">
                 <Image className="imageHeader" fluid={image.childImageSharp.fluid} alt="article-image"/>
@@ -25,7 +38,7 @@ function articleTemplate({ data }) {
                 </nav>
             </div>
             <div className="textContent">
-                <div className="title">
+                <div className="title" >
                     <h3>{title}</h3>
                     <Link to={`/tag/${tags}`}>#{tags}</Link>
                 </div>
@@ -34,24 +47,27 @@ function articleTemplate({ data }) {
                         <img src={textAvatar} alt="" />
                     </div>
                     <div className="ligneTop"></div>
-                    <p>{ content}</p>
+                    <p  data-sal="slide-right" data-sal-delay="2000" data-sal-easing="ease" data-sal-duration="1000">{ content}</p>
                     <div className="ligneBottom"></div>
                     <p className="date">{date}</p>
                     <div className="socialLinks">
                         <span>Share Buttons</span>
                         <div className="socialButton">
                             <div className="socialLine"></div>
-                            <span><img src={facebookLogo} alt=""/></span>
-                            <span><img src={instagramLogo} alt=""/></span>
-                            <span><img src={twitterLogo} alt=""/></span>
+                            <span><a aria-label="social-share" href={`https://www.facebook.com/sharer/sharer.php?u=` + baseUrl +  pageContext.slug } target="_blank" rel="noopener noreferrer"><img src={facebookLogo} alt="facebook-logo"/></a></span>
+                            <span><a aria-label="social-share" href={`https://www.linkedin.com/shareArticle?url=` + baseUrl +  pageContext.slug } target="_blank" rel="noopener noreferrer"><img src={instagramLogo} alt="instagram-logo"/></a></span>
+                                <span><a aria-label="social-share" href={`https://twiiter.com/share?url=` + baseUrl + pageContext.slug } target="_blank" rel="noopener noreferrer"><img src={twitterLogo} alt="twitter-logo"/></a></span>
+                            {/* <span><a aria-label="social-share" href={`https://twiiter.com/share?url=` + baseUrl +  pageContext.slug + "&text=" + title + "&via" + "twitterHandle" } target="_blank" rel="noopener noreferrer"><img src={twitterLogo} alt=""/></a></span> */}
                         </div>
                     </div>
                 </div>
+                <DiscussionEmbed className="disqusPlug" shortname={disqusShortname} config={disqusConfig} />
                 <SignUp />
                 <GreetingBox noNeed />
             </div>
             <Footer />
         </div>
+       </> 
     )
 }
 
@@ -59,7 +75,9 @@ export const query = graphql`
     query GetSingleBlog($slug: String) {
         blog: strapiBlogs(slug: {eq: $slug}){
             content
+            description
             tags
+            id
             title
             date(formatString: "MMMM Do YYYY")
             image {

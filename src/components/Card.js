@@ -31,13 +31,13 @@ function Card() {
             {
                 cards.map((card, index) => {
                     return (
-                        <div key={index} className="cardItems">
-                            <div className="imgBox">
+                        <div key={index} className="cardItems" >
+                            <div className="imgBox" data-sal="slide-down" data-sal-delay="300" data-sal-easing="ease" data-sal-duration="1000">
                                 <Image className="cardImg" fluid={card.card_image.childImageSharp.fluid} alt="card-img" />
                             </div>
-                            <div className="quoteBox">
+                            <div className="quoteBox" data-sal="fade" data-sal-delay="800" data-sal-easing="ease" data-sal-duration="1000" >
                                 <p>{card.quote}</p>
-                                <div className="ligne"></div>
+                                <div className="ligne" data-sal="fade" data-sal-delay="300" data-sal-easing="ease" data-sal-duration="1000"></div>
                                 <div className="categoryBtn">
                                   <Link className="btn btn-border-1" to={`/tag/${card.tags}`}>
                                     # {card.tags}

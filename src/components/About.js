@@ -34,10 +34,10 @@ function About() {
     return (
       <>
          <div className="About">
-            <div className="imgContainter">
+            <div className="imgContainter" data-sal="slide-right" data-sal-delay="1500" data-sal-easing="ease" data-sal-duration="1000">
               <Image fluid={avatar.childImageSharp.fluid} className="aboutImg" alt="about-img"/>
             </div>
-              <div className="description">
+              <div className="description" data-sal="slide-left" data-sal-delay="2000" data-sal-easing="ease" data-sal-duration="1000">
                 <h3> {bioTitle} </h3>
                 <p>{biography}</p>
               </div>

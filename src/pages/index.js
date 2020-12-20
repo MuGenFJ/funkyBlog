@@ -8,7 +8,7 @@ import Articles from '../components/Articles'
 import SignUp from '../components/SignUp'
 import GreetingBox from '../components/GreetingBox'
 import ForMoreBtn from '../components/ForMoreBtn'
-
+import SEO from "../components/SEO"
 
 
 function index({ data }) {
@@ -26,6 +26,7 @@ function index({ data }) {
   return (
     <>
       <Layout>
+        <SEO title="Home" description="HomePage"/>
         <div className="blogBox"> 
           <BlogTitle logo={startLogo.childImageSharp.fixed} bigTitle logoClass="logoTitle"/>
           <About />

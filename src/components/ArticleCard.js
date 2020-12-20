@@ -4,12 +4,12 @@ import {Link} from 'gatsby'
 
 function ArticleCard({image, tags, title, description, slug, date, strapiId}) {
     return (
-        <div className="articleContainer">
+        <div className="articleContainer" data-sal="zoom-out" data-sal-delay="300" data-sal-easing="ease" data-sal-duration="1000">
                 <div className="articleImageContainer">
                     <Image className="articleCardImage" fluid={image.childImageSharp.fluid} alt=""/>
                 </div>
                 <div className="articleBox">
-                    <div className="articleCard">
+                    <div className="articleCard" data-sal="zoom-out" data-sal-delay="900" data-sal-easing="ease" data-sal-duration="1000">
                         <div className="cardTop">
                             <Link to={`/tag/${tags}`}>#{tags}</Link>
                         </div>

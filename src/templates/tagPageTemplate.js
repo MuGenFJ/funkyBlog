@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import Articles from '../components/Articles'
 import SignUp from '../components/SignUp'
 import GreetingBox from '../components/GreetingBox'
+import SEO from '../components/SEO'
 
 function tagPageTemplate({ data }) {
    
@@ -15,8 +16,9 @@ function tagPageTemplate({ data }) {
 
     return (
         <Layout>
+           <SEO title={`#${cards[0].tags}`} /> 
             <div className="thoughtsContainer">
-                <div className="imageBox">
+                <div className="imageBox" >
                       <Image className="sideImage" fluid={cards[0].pageSideImage.childImageSharp.fluid} alt="sideImage" />
                 </div>
                 <div className="separation"></div>

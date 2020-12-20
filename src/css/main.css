@@ -895,7 +895,6 @@ Components Styles
   font-family: var(--regular);
   color: var(--brown);
   font-size: 10px;
-  text-transform: uppercase;
   text-align: center;
 }
 @media screen and (min-width: 768px) {
@@ -913,7 +912,7 @@ Components Styles
   font-style: italic;
 }
 
-.registerForm .formField:nth-child(4) {
+.registerForm .formFieldBtn {
   width: 60%;
   background-color: var(--brown);
   color: var(--beige);
@@ -922,7 +921,7 @@ Components Styles
   border: 1px solid var(--brown);
   cursor: pointer;
 }
-.registerForm .formField:nth-child(4):hover {
+.registerForm .formFieldBtn:hover {
   background-color: var(--beige);
   color: var(--brown);
 }
@@ -1278,6 +1277,16 @@ Components Styles
 .readContainer .textContent .textBox .socialLinks .socialButton span {
   margin: 0 3px;
   cursor: pointer;
+  transition: 1s all ease;
+}
+
+.readContainer .textContent .textBox .socialLinks .socialButton span img {
+  transition: 0.4s all ease-in-out;
+}
+
+.readContainer .textContent .textBox .socialLinks .socialButton span img:hover {
+  transform: scale(1.2);
+  transition: 0.4s all ease-in-out;
 }
 
 @media screen and (min-width: 1024px) {
@@ -1287,6 +1296,10 @@ Components Styles
   .readContainer .textContent .greetingContainer {
     background-color: var(--orange);
   }
+}
+
+.disqusPlug {
+  background-color: white;
 }
 
 /*aboutPage*/
