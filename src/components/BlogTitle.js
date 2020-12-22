@@ -29,4 +29,5 @@ function BlogTitle({ title, logo, bigTitle, logoClass }) {
     )
 }
 
+
 export default BlogTitle

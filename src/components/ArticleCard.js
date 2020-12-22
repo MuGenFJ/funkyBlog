@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from "prop-types"
 import Image from 'gatsby-image'
 import {Link} from 'gatsby'
 
@@ -32,5 +33,16 @@ function ArticleCard({image, tags, title, description, slug, date, strapiId}) {
             </div> 
     )
 }
+
+ArticleCard.propTypes = {
+    image: PropTypes.object.isRequired,
+    tags: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    strapiId: PropTypes.number.isRequired,
+}
+
 
 export default ArticleCard
