@@ -7,7 +7,7 @@ function ArticleCard({image, tags, title, description, slug, date, strapiId}) {
     return (
         <div className="articleContainer" data-sal="zoom-out" data-sal-delay="300" data-sal-easing="ease" data-sal-duration="1000">
                 <div className="articleImageContainer">
-                    <Image className="articleCardImage" fluid={image.childImageSharp.fluid} alt=""/>
+                    <Image className="articleCardImage" fluid={image.childImageSharp.fluid} alt="article-card-img"/>
                 </div>
                 <div className="articleBox">
                     <div className="articleCard" data-sal="zoom-out" data-sal-delay="900" data-sal-easing="ease" data-sal-duration="1000">
