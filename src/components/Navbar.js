@@ -27,7 +27,7 @@ function Navbar() {
     // ===== Clik Outside Feature to close the OverlayMenu (end) =====
 
     return (
-        <nav className="navBar">
+        <nav className="navBar">        
            
             <div ref={menuRef} className={`overlayContainer ${open ? "active" : ""}`}>
                 <Links styleClass="linksItemsXs" />

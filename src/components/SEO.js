@@ -11,7 +11,7 @@ const query = graphql`
         twitterUsername
         siteDesc: description
         siteTitle: title
-        siteUrl:url
+        siteUrl
       }
     }
   }
