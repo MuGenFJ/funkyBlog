@@ -947,6 +947,10 @@ Components Styles
 }
 
 .greetingContainer .box1 span {
+  -webkit-rotate: -30deg;
+  -moz-rotate: -30deg;
+  -ms-rotate: -30deg;
+  -o-rotate: -30deg;
   rotate: -30deg;
   font-family: var(--handwriting);
   letter-spacing: 3px;
