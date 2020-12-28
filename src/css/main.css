@@ -298,7 +298,8 @@ Components Styles
 
 .About {
   margin-top: 30px;
-  margin-bottom: 120px;
+  /* margin-bottom: 120px; */
+  height: 80vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -307,6 +308,7 @@ Components Styles
     margin: 0 auto;
     margin-top: 30px;
     margin-bottom: 80px;
+    height: 50vh;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -334,7 +336,7 @@ Components Styles
 .description {
   position: absolute;
   top: 400px;
-  left: 100px;
+  left: 90px;
   padding: 20px;
   border: 3px solid var(--beige);
   background-color: rgba(255, 255, 255, 0.911);
@@ -540,11 +542,11 @@ Components Styles
 .avatar {
   position: absolute;
   top: 38%;
-  left: 18%;
+  left: 8%;
 }
 @media screen and (min-width: 768px) {
   .avatar {
-    left: 35%;
+    left: 30%;
   }
 }
 
@@ -949,7 +951,12 @@ Components Styles
   font-family: var(--handwriting);
   letter-spacing: 3px;
   color: var(--brown);
-  font-size: 22px;
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  .greetingContainer .box1 span {
+    font-size: 22px;
+  }
 }
 
 .greetingContainer .box1 img {

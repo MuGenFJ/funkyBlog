@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: "Hope's Blog",
     description: "My personal blog",
-    siteUrl: "https://hopes-blog.com",
+    siteUrl: "https://hope-blog.netlify.app/",
     twitterUsername: "@ajHope",
     image: "/twitter-img.png",
     author: `@ajHope`,
