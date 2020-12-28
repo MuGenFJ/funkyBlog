@@ -16,7 +16,7 @@ import SEO from '../components/SEO'
 function articleTemplate({ data, pageContext }) {
     const { content, title, date, tags, image, id, description } = data.blog
 
-    const baseUrl = "https://hope-blog.netlify.app/"
+    const baseUrl = "https://hope-blog.netlify.app/blogs/"
 
     const disqusShortname = "hope-blog-1"
     const disqusConfig = {
